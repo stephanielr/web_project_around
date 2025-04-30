@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="social network" />
+    <meta name="description" content="Around the US" />
+    <meta name="keywords" content="Explorador,Paisaje" />
     <meta name="author" content="Stephanie Lopez" />
-    <meta name="keywords" content="Explorador, Paisaje" />
-    <title>Aroud EUU</title>
+    <title>Around the US</title>
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
@@ -38,7 +38,7 @@
         <section class="gallery"></section>
         <section class="popup">
           <div class="popup__container">
-            <h2 class="popup__form-title">Editar PerfiL</h2>
+            <h2 class="popup__form-title">Editar Perfil</h2>
             <form class="popup__form">
               <input
                 class="popup__form-name"
@@ -76,7 +76,40 @@
           <div class="popup__button-close"></div>
         </section>
         <section class="popup-add">
-          <div class="popup-add__container"></div>
+          <div class="popup-add__container">
+            <h2 class="popup-add__form-title">Nuevo Lugar</h2>
+            <form class="popup-add__form">
+              <input
+                class="popup-add__form-name"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Título"
+                minlength="2"
+                maxlength="30"
+                required
+              />
+              <span
+                class="popup-add__form-name-message validation-message hidden-message"
+                >Please fill out this field</span
+              >
+              <input
+                class="popup-add__form-occupation"
+                type="url"
+                id="occupation"
+                name="occupation"
+                placeholder="Enlace a la imagen"
+                required
+              />
+              <span
+                class="popup-add__form-occupation-message validation-message hidden-message"
+                >URL no válida</span
+              >
+              <button type="submit" class="popup-add__form-button" disabled>
+                Guardar
+              </button>
+            </form>
+          </div>
           <div class="popup-add__button-close"></div>
         </section>
         <div class="popup__image">
