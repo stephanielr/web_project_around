@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Around the US" />
+    <meta name="keywords" content="Explorador,Paisaje" />
+    <meta name="author" content="Stephanie Lopez" />
+    <title>Around the US</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="header__logo" src="./images/header-logo.svg" alt="logo"/>
+      </header>
+
+      <main class="content">
+        <section class="profile" id="profile">
+          <div class="profile__avatar-container">
+            <img src="" alt="Imagen de perfil." class="profile__avatar" />
+            <button class="profile__avatar-edit-button" id="avatar-edit-button">
+              <img
+                src="../images/edit-button.svg"
+                alt="Editar avatar"
+                class="profile__avatar-edit-icon"
+              />
+            </button>
+          </div>
+          <div class="profile__info">
+            <h2 class="profile__name" id="profile-name"></h2>
+            <h3 class="profile__about" id="profile-job"></h3>
+            <button id="edit-button-open" class="profile__edit-button">
+              <img src="../images/edit-button.svg" alt=" Boton editar" />
+            </button>
+          </div>
+          <button class="profile__add-button" id="add-button-open">+</button>
+        </section>
+
+        <!--Popup para cambiar AVATAR de perfil-->
+        <dialog class="dialog-general" id="modal-avatar">
+          <button class="profile__close-button">
+            <img
+              src="../images/Close-Icon.svg"
+              alt="Cerrar"
+              id="avatar-button-close"
+              class="profile__close-icon"
+            />
+          </button>
+          <form class="profile__edit-form" id="avatar-form" novalidate>
+            <header class="profile__edit-form-header">
+              Cambiar foto de perfil
+            </header>
+            <input
+              type="url"
+              class="profile__edit-form-input profile__edit-form-input_name"
+              placeholder="https://ejemplo.com/imagen-ejemplo.jpg"
+              id="avatarURL"
+              required
+            />
+            <span class="form__input-error" id="avatarURL-error"></span>
+            <button
+              id="save-button-avatar"
+              class="profile__edit-form-button profile__edit-form-button_save"
+            >
+              Guardar
+            </button>
+          </form>
+        </dialog>
+        <!--Dialog Form EDITAR PERFIL-->
+        <dialog id="modal-edit" class="dialog-general">
+          <button class="profile__close-button">
+            <img
+              src="../images/Close-Icon.svg"
+              alt="Cerrar"
+              id="edit-button-close"
+              class="profile__close-icon"
+            />
+          </button>
+          <form class="profile__edit-form" id="profile-form" novalidate>
+            <header class="profile__edit-form-header">Editar Perfil</header>
+            <input
+              type="text"
+              class="profile__edit-form-input profile__edit-form-input_name"
+              placeholder="Nombre"
+              id="name"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="form__input-error" id="name-error"></span>
+            <input
+              type="text"
+              class="profile__edit-form-input profile__edit-form-input_job"
+              placeholder="Acerca de mí"
+              id="job"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="form__input-error" id="job-error"></span>
+            <button
+              id="save-button"
+              class="profile__edit-form-button profile__edit-form-button_save"
+            >
+              Guardar
+            </button>
+          </form>
+        </dialog>
+
+        <!-- Contenedor de tarjetas -->
+        <div class="element-list__item">
+          <!--Aqui aparecen las cards creadas con JS-->
+        </div>
+        <!--Dialog Place AGREGAR FOTOS-->
+        <dialog id="modal-add" class="dialog-general">
+          <button class="element__close-button">
+            <img
+              src="../images/Close-Icon.svg"
+              alt="Cerrar"
+              id="add-button-close"
+              class="profile__close-icon"
+            />
+          </button>
+          <form class="profile__edit-form" id="add-card-form" novalidate>
+            <header class="profile__edit-form-header">Nuevo Lugar</header>
+            <input
+              type="text"
+              class="profile__edit-form-input profile__edit-form-input_name"
+              placeholder="Titulo"
+              id="title"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="form__input-error" id="title-error"></span>
+            <input
+              type="url"
+              class="profile__edit-form-input profile__edit-form-input_job"
+              placeholder="URL de la imagen"
+              id="imageURL"
+              required
+            />
+            <span class="form__input-error" id="imageURL-error"></span>
+            <button
+              id="save-button-add"
+              class="profile__edit-form-button profile__edit-form-button_save"
+            >
+              Crear
+            </button>
+          </form>
+        </dialog>
+        <!--Dialog Image-->
+        <dialog id="modal-image" class="element__modal">
+          <button class="element__close-button" id="dialog-close-button">
+            <img
+              src="../images/Close-Icon.svg"
+              alt="Cerrar"
+              class="profile__close-icon"
+            />
+          </button>
+          <img
+            id="dialog-image"
+            src=""
+            alt="Imagen bonita"
+            class="element__modal-image"
+          />
+          <p id="dialog-title" class="element__modal-title"></p>
+        </dialog>
+        <!--Dialog Delete CONFIRMACION PARA ELIMINAR CARDS-->
+        <dialog id="modal-delete" class="dialog-general">
+          <button class="element__close-button" id="confirmation-dialog-close">
+            <img
+              src="../images/Close-Icon.svg"
+              alt="Cerrar"
+              class="profile__close-icon"
+            />
+          </button>
+          <header class="profile__edit-form-header">¿Estas seguro/a?</header>
+          <button
+            class="profile__edit-form-button profile__delete-button"
+            id="delete-button"
+          >
+            Si
+          </button>
+        </dialog>
+        <!--Footer-->
+        <footer>
+          <p class="footer">© 2025 Around The U.S.</p>
+        </footer>
+      </main>
+      <!--Template-->
+      <template class="elements" id="template-selector">
+        <div class="element">
+          <button class="element__button-image" id="open-image">
+            <img src="" alt="Imagen" class="element__image" />
+          </button>
+          <button class="element__button-delete" id="delete-image-btn">
+            <img
+              src="../images/thrashcan.svg"
+              alt="Delete button"
+              class="element__image-delete"
+            />
+          </button>
+          <div class="element__description">
+            <p class="element__title" id="card-title"></p>
+            <button class="element__button element__button-like">
+              <img
+                src="../images/heart.svg"
+                class="element__like-button"
+                alt="Like button"
+              />
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+    <script type="module" src="../js/script.js"></script>
+  </body>
+</html>

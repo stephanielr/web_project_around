@@ -1,0 +1,113 @@
+.element__modal {
+  position: fixed;
+  bottom: 110px;
+  top: 130px;
+  border-radius: 8px;
+  border: none;
+  padding: 0;
+  z-index: 3;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.element__modal-image {
+  max-width: 816px;
+  max-height: 540px;
+}
+.element__modal-title {
+  color: white;
+  font-family: "inter", sans-serif;
+  font-weight: 291;
+}
+
+.element__close-button {
+  position: absolute;
+  display: flex;
+  top: -49px;
+  right: -49px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.element__close-button:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 985px) {
+  .element__modal_vertical-image {
+    max-height: 75vh;
+  }
+  .element__modal_horizontal-image {
+    max-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .element__modal_horizontal-image {
+    max-height: 60vh;
+  }
+  .element__modal_horizontal-content {
+  }
+  .element__modal_vertical-image {
+    max-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .element__modal_horizontal-image {
+    max-height: 50vh;
+  }
+  .element__modal {
+    bottom: 150px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .element__modal_horizontal-image {
+    max-height: 45vh;
+  }
+
+  .element__close-button {
+    right: -55px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .element__modal_horizontal-image {
+    max-height: 40vh;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .element__modal_horizontal-image {
+    max-height: 35vh;
+    transform: translateX(-15%);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .element__modal_vertical-image {
+    max-height: 50vh;
+  }
+  .element__modal_horizontal-image {
+    max-height: 30vh;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .element__close-button {
+    top: -46px;
+    right: -46px;
+  }
+
+  .element__modal_vertical-image {
+    max-height: 45vh;
+  }
+  .element__modal_horizontal-image {
+    max-height: 20vh;
+    transform: translateX(-2%);
+  }
+}
